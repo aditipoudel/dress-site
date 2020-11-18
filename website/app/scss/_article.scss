@@ -1,0 +1,69 @@
+.articles{
+  background-color:
+    $VeryLigtGray;
+}
+.article{
+   
+    &__grid{
+       
+        display: grid;
+        gap: 1.875rem;
+       grid-template-columns: 1fr;
+
+       @include breakpoint-up(medium){
+             grid-template-columns: repeat(2,1fr);
+        }
+       @include breakpoint-up(large){
+            grid-template-columns: repeat(4,1fr);
+ 
+           }
+         // grid-template-columns:repeat(auto-fit, minmax(14.375rem, 1fr));
+          
+    }
+   
+    &__item{
+       background-color:$White;
+     border-radius: 0.3125rem;
+     overflow: hidden;
+   box-shadow:  0px 3px 12px rgba(0,0,0,0.15);
+     transition: all 150ms ease-in-out;
+
+     &:hover{
+transform: scale(1.05);          
+     }
+     
+    }
+
+    &__image{
+       height: 12.5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &__text{
+       padding: 1.875rem 1.875rem 2.5rem 1.875rem;
+       color:$DarkBlue ;
+       
+   @include breakpoint-up(medium){
+       padding: 1.875rem 1.5625rem;
+   }        
+    }
+
+    &__author{
+        font-size: 0.625rem;
+        margin-bottom: 0.75rem;
+    }
+
+    &__title{
+       color:$DarkBlue ;
+        font-size: 1.0625rem;
+        line-height:1.2 ;
+        margin-bottom: 0.5rem;
+        }
+
+    &__description{
+        font-size: 0.8125rem;
+    }
+
+}
